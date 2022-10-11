@@ -8,12 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    var emojis = ["❤️","😍","😘","🥰","🥶","🫣","✈️"]
+    
     var body: some View {
         HStack {
-            CardView(content: "❤️")
-            CardView(content: "😍")
-            CardView(content: "🥰")
-            CardView(content: "😘")
+            ForEach (0..<emojis.count, id: \.self) { emoji in
+                CardView(content: emojis[emoji])
+            }
         }
         .padding()
     }
